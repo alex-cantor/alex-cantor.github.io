@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Alex Cantor</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.rawgit.com/tengbao/vanta/master/dist/vanta.net.min.js"></script>
+  </head>
+  <body class="text-white overflow-x-hidden font-['Oswald'] m-0 p-0">
+    <div id="vanta-bg" class="fixed top-0 left-0 w-full h-full z-[-1]"></div>
+    <section
+      id="intro"
+      class="bg-black/50 min-h-screen py-12 px-4 flex flex-col justify-center text-center items-center"
+    >
+      <div class="container mx-auto">
+        <h1 class="text-6xl font-bold mb-4">
+          <span class="text-4xl block">Hi &#128075;,</span>
+          I'm Alex!
+        </h1>
+        <h2 class="text-3xl font-light">
+          I am a
+          <span id="rotating-text" class="transition-opacity duration-500"></span>
+        </h2>
+      </div>
+    </section>
+    <section
+      id="about"
+      class="bg-black/50 min-h-screen py-12 px-4 text-white flex flex-col justify-center"
+    >
+      <div class="container mx-auto">
+        <h3 class="text-left mb-8 text-4xl font-bold">About</h3>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="flex flex-col gap-8">
+            <div>
+              <h3 class="text-2xl mb-2">My Journey</h3>
+              <p class="leading-relaxed text-[20px]">
+                Nearly a decade ago, I joined Code Ninjas, where I progressed
+                through the curriculum and earned my Black Belt in programming.
+                Following my experience in the programming world, I wanted to
+                explore other areas of computer science. That is when I tried
+                cybersecurity at GenCyber, and I fell in love! After three
+                consecutive years of attending GenCyber, I decided to take my
+                skills to the next level and join a cybersecurity team. After my
+                first year on the team, I wanted to apply my skills to the
+                workforce, so I applied for a MidAmerican Energy Cybersecurity
+                Internship. I was one of the few to be accepted into the
+                program, and the only high schooler out of hundreds to be
+                accepted into the Cybersecurity-specific internship! I continue to learn
+                and grow in the cybersecurity field, and I am excited to see
+                where my journey takes me next.
+              </p>
+            </div>
+            <div>
+              <h3 class="text-2xl mb-2">Experience</h3>
+              <div class="grid grid-cols-1 gap-4">
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">Cybersecurity Intern</h4>
+                  <h5 class="italic mb-2">MidAmerican Energy Company</h5>
+                  <p>
+                    I will be working as a Cybersecurity Intern at MidAmerican
+                    Energy Company this summer!
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">
+                    Mentor | Competitor | Member
+                  </h4>
+                  <h5 class="italic mb-2">IATechEd</h5>
+                  <p>
+                    As a member of IATechEd, I work to reach as many fellow high
+                    school students as possible.
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">Technical Intern</h4>
+                  <h5 class="italic mb-2">Pi515</h5>
+                  <p>
+                    I lead a primary team of three to completely overhaul the
+                    Pi515 website.
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">
+                    Senior Madrich | Technology Support
+                  </h4>
+                  <h5 class="italic mb-2">
+                    Jewish Federation of Greater Des Moines
+                  </h5>
+                  <p>I both teach students aged 2-10, as well as assist with day-to-day technology needs and large projects.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-8">
+            <div>
+              <h3 class="text-2xl mb-4">Skills</h3>
+              <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg mb-4">
+                <h4 class="text-lg font-semibold mb-2">
+                  Programming Languages
+                </h4>
+                <div class="flex flex-wrap">
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">PHP</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">JavaScript</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">HTML/CSS</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Python</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Java</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">SQL</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">C</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">C++</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">C#</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Lua</span>
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg mb-4">
+                <h4 class="text-lg font-semibold mb-2">
+                  Frameworks & Libraries
+                </h4>
+                <div class="flex flex-wrap">
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Laravel</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">TailwindCSS</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">jQuery</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Pandas</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">NumPy</span>
+                </div>
+              </div>
+              <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg mb-4">
+                <h4 class="text-lg font-semibold mb-2">Tools & Technologies</h4>
+                <div class="flex flex-wrap">
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Cloud (AWS)</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Git</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">MySQL</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Linux</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Windows</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">BASH</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Virtual Machines</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">WebFlow</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Unity Engine</span>
+                  <span class="inline-block px-3 py-1 bg-gray-600 rounded-full text-white text-sm mr-2 mb-2">Roblox Studio</span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl mb-4">Certifications</h3>
+              <div class="grid grid-cols-1 gap-4">
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">
+                    IN PROGRESS: Certified Penetration Testing Specialist
+                  </h4>
+                  <h5 class="italic mb-2">HackTheBox</h5>
+                  <p>Link to Certification: To Complete</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">Linux+</h4>
+                  <h5 class="italic mb-2">TestOut</h5>
+                  <p>
+                    Link to Certification:
+                    https://certification.testout.com/managecert?certificateID=6-2C6-VGDVR9
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">ProgrammingExpert</h4>
+                  <h5 class="italic mb-2">AlgoExpert</h5>
+                  <p>
+                    Link to Certification:
+                    https://certificate.algoexpert.io/ProgrammingExpert%20Certificate%20PE-0bd61ab533
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">FrontendExpert</h4>
+                  <h5 class="italic mb-2">AlgoExpert</h5>
+                  <p>
+                    Link to Certification:
+                    https://certificate.algoexpert.io/FrontendExpert%20Certificate%20FE-35171cad34
+                  </p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">
+                    The Ultimate Java Mastery
+                  </h4>
+                  <h5 class="italic mb-2">CodeWithMosh</h5>
+                  <p>Link to Certification: No Certification Link Available</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur-lg p-4 rounded-lg">
+                  <h4 class="text-xl font-semibold">
+                    Java Programming Essentials: AP Computer Science A
+                  </h4>
+                  <h5 class="italic mb-2">Udemy</h5>
+                  <p>
+                    Link to Certification:
+                    https://udemy-certificate.s3.amazonaws.com/pdf/UC-468666e9-da01-44f7-b29e-f3c576315af0.pdf
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      id="works"
+      class="bg-black/50 min-h-[15vh] py-12 px-4 text-white flex flex-col justify-center"
+    >
+      <div class="container mx-auto">
+        <h3 class="text-left mb-8 text-4xl font-bold">Selected Works</h3>
+        <div
+          id="selected-works"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+        ></div>
+      </div>
+    </section>
+    <section
+      id="contact"
+      class="bg-black/50 min-h-[45vh] py-12 px-4 text-white flex flex-col justify-center"
+    >
+      <div class="container mx-auto">
+        <h3 class="text-left mb-8 text-4xl font-bold">Contact</h3>
+        <div class="max-w-xl mx-auto bg-white/10 backdrop-blur-lg p-6 rounded-lg">
+          <p class="mb-4">
+            I'd love to hear from you! Feel free to reach out via the form
+            below:
+          </p>
+          <form
+            action="https://formspree.io/f/xldjwbyl"
+            method="POST"
+            class="flex flex-col gap-4"
+          >
+            <label class="block">
+              <span class="block text-sm font-medium mb-1">Email</span>
+              <input
+                type="email"
+                name="email"
+                required
+                class="w-full px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-600 bg-gray-200 text-black"
+                placeholder="you@example.com"
+              />
+            </label>
+            <label>
+              <span class="block text-sm font-medium mb-1">Message</span>
+              <textarea
+                name="message"
+                required
+                class="w-full h-32 px-3 py-2 rounded focus:outline-none focus:ring-2 focus:ring-teal-600 bg-gray-200 text-black"
+                placeholder="Your message..."
+              ></textarea>
+            </label>
+            <button
+              type="submit"
+              class="bg-teal-600 text-white py-2 rounded hover:bg-teal-700 transition-colors"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-gray-900 text-white py-4">
+      <div class="container mx-auto text-center">
+        <p class="text-sm">&copy; 2025 Alex Cantor. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: false,
+        touchControls: false,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0xffffff,
+        backgroundColor: 0x1a1a1a,
+        points: 12.0,
+        maxDistance: 22.0,
+        spacing: 18.0,
+        showDots: true
+      });
+      const items = [
+        "Web Developer",
+        "Cybersecurity Enthusiast",
+        "Programmer",
+        "Avid Learner"
+      ];
+      let index = 0;
+      function rotateText() {
+        const rotatingText = document.getElementById("rotating-text");
+        rotatingText.style.opacity = 0;
+        setTimeout(() => {
+          rotatingText.textContent = items[index];
+          rotatingText.style.opacity = 1;
+          index = (index + 1) % items.length;
+        }, 500);
+      }
+      setInterval(rotateText, 2500);
+      rotateText();
+      const selectedWorksData = [
+        {
+          title: "SynagogueCentral",
+          description:
+            "An all-in-one CRM for any Synagogue's day-to-day operations."
+        },
+        {
+          title: "chatE[ducation]",
+          description:
+            "An online chatroom for students to discuss their classwork."
+        }
+      ];
+      const selectedWorksContainer = document.getElementById("selected-works");
+      selectedWorksData.forEach((work) => {
+        const workDiv = document.createElement("div");
+        workDiv.className = "bg-white/10 backdrop-blur-lg p-4 rounded-lg";
+        workDiv.innerHTML = `
+          <h4 class="text-xl font-semibold mb-1">${work.title}</h4>
+          <p>${work.description}</p>
+        `;
+        selectedWorksContainer.appendChild(workDiv);
+      });
+    </script>
+  </body>
+</html>
