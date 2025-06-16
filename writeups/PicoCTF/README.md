@@ -8,3 +8,4 @@ PicoCTF is a cybersecurity-learning platform through jeapordy-style CTFs. In thi
     - Easy
         - [PIE TIME](pwn/easy/pie_time.md)
         - [heap 0](pwn/easy/heap_0.md)
+        - [format string 0](pwn/easy/format_string_0.md)
