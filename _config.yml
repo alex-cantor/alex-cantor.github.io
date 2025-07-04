@@ -1,3 +1,4 @@
 title: Alex Cantor
-remote_theme: mattgraham/minima@dark-mode
+remote_theme: just-the-docs/just-the-docs
+color_scheme: dark
 markdown: kramdown
