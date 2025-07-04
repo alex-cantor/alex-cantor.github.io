@@ -1,6 +1,10 @@
 ---
 layout: home
 title: Alex Cantor
+header_pages:
+  - index.md
+  - knowledge_base/README.md
+  - writeups/README.md
 ---
 
 # Welcome
