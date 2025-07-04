@@ -3,7 +3,7 @@ title: Infoleak Techniques
 parent: Protection Bypass
 grand_parent: pwn
 great_grand_parent: Knowledge Base
-nav_order: 1
+nav_order: 4
 ---
 
 # Infoleak Techniques

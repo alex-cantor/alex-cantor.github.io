@@ -1,3 +1,11 @@
+---
+title: Challenge 1 - ret2win
+nav_order: 1
+has_children: true
+parent: ROPEmporium
+great_parent: Writeups
+---
+
 # Challenge 1: ret2win
 
 Link: https://ropemporium.com/challenge/ret2win.html
