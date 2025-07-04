@@ -1,3 +1,11 @@
+---
+title: FORTIFY_SOURCE Bypass
+parent: Protection Bypass
+grand_parent: pwn
+great_grand_parent: Knowledge Base
+nav_order: 1
+---
+
 # Bypassing FORTIFY_SOURCE
 
 ## What is FORTIFY_SOURCE?

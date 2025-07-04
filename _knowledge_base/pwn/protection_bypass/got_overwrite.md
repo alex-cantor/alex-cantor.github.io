@@ -1,3 +1,11 @@
+---
+title: GOT Overwrite
+parent: Protection Bypass
+grand_parent: pwn
+great_grand_parent: Knowledge Base
+nav_order: 1
+---
+
 # GOT Overwrite Attack
 
 ## What is the GOT?

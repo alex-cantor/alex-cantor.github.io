@@ -1,3 +1,11 @@
+---
+title: Infoleak Techniques
+parent: Protection Bypass
+grand_parent: pwn
+great_grand_parent: Knowledge Base
+nav_order: 1
+---
+
 # Infoleak Techniques
 
 Leaking memory addresses is critical for defeating PIE (Position Independent Executable) and ASLR (Address Space Layout Randomization).

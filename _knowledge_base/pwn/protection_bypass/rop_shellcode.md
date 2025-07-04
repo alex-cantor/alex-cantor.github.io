@@ -1,3 +1,11 @@
+---
+title: ROP Chains and Shellcode Injection
+parent: Protection Bypass
+grand_parent: pwn
+great_grand_parent: Knowledge Base
+nav_order: 1
+---
+
 # ROP Chains and Shellcode Injection
 
 This guide explains how to proceed based on whether the binary has **NX enabled** or **NX disabled**.

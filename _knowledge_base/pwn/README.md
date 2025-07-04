@@ -1,3 +1,10 @@
+---
+title: Pwn
+nav_order: 1
+has_children: true
+parent: Knowledge Base
+---
+
 # Pwn
 
 This is my ultimate knowledge base of Pwn / Binary Exploitation

@@ -1,3 +1,9 @@
+---
+title: Writeups
+nav_order: 1
+has_children: true
+---
+
 # Writeups
 
 Here, you can find writeups for many of the problems I have solved.

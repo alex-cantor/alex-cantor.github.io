@@ -1,3 +1,9 @@
+---
+title: Knowledge Base
+nav_order: 1
+has_children: true
+---
+
 # Knowledge Base
 
 This section of my GitHub repo will serve to me as one location for my notes, as well as a location for you to learn some of what I have to share. I hope to write about everything I know, though of course this is not possible to do in full. That being said, moving forward, as I learn, I will do my best to transcribe what I do learn, as well as write about stuff and explain stuff I have learned in the past.
