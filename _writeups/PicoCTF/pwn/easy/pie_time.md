@@ -1,10 +1,11 @@
 ---
-title: Format String 0
-parent: easy
-grand_parent: pwn
+title: PIE TIME
+parent: Easy
+grand_parent: Pwn
 great_grand_parent: PicoCTF
 nav_order: 3
 ---
+
 
 # PIE TIME - PicoCTF 2025
 

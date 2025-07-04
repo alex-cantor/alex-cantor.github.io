@@ -1,10 +1,11 @@
 ---
 title: Format String 0
-parent: easy
-grand_parent: pwn
+parent: Easy
+grand_parent: Pwn
 great_grand_parent: PicoCTF
 nav_order: 1
 ---
+
 
 # format string 0 - PicoCTF 2024
 

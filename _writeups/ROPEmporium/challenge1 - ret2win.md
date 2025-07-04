@@ -1,10 +1,10 @@
 ---
 title: Challenge 1 - ret2win
-nav_order: 1
-has_children: true
 parent: ROPEmporium
-great_parent: Writeups
+grand_parent: Writeups
+nav_order: 1
 ---
+
 
 # Challenge 1: ret2win
 
