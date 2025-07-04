@@ -2,3 +2,18 @@ title: Alex Cantor
 remote_theme: just-the-docs/just-the-docs
 color_scheme: dark
 markdown: kramdown
+
+just_the_docs:
+  collections:
+    writeups:
+      name: Writeups
+      nav_fold: true
+    knowledge_base:
+      name: Knowledge Base
+      nav_fold: true
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

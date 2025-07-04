@@ -1,3 +1,9 @@
+---
+title: PicoCTF
+nav_order: 1
+has_children: true
+---
+
 # PicoCTF
 
 PicoCTF is a cybersecurity-learning platform through jeapordy-style CTFs. In this section, I will (hopefully) go over all challenges by PicoCTF, ranging from beginner to advanced challenges in numerous topics

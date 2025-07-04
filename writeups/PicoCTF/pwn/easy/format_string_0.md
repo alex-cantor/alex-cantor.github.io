@@ -1,3 +1,11 @@
+---
+title: Format String 0
+parent: easy
+grand_parent: pwn
+great_grand_parent: PicoCTF
+nav_order: 1
+---
+
 # format string 0 - PicoCTF 2024
 
 **Category:** Binary Exploitation  

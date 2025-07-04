@@ -1,10 +1,7 @@
 ---
 layout: home
 title: Alex Cantor
-header_pages:
-  - index.md
-  - knowledge_base/README.md
-  - writeups/README.md
+nav_order: 1
 ---
 
 # Welcome
@@ -68,17 +65,10 @@ Nearly a decade ago, I joined Code Ninjas and earned my Black Belt in programmin
 
 ## Knowledge Base
 
-This section contains organized notes and resources on cybersecurity and binary exploitation.
-
-- [Knowledge Base Overview](./knowledge_base/)
-- [Pwn Topics](./knowledge_base/pwn/)
-  - [Protection Bypass](./knowledge_base/pwn/protection_bypass/files/)
+Organized notes and resources on cybersecurity and binary exploitation [here](knowledge_base/README.md)!
 
 ---
 
 ## Writeups
 
-Writeups and solutions for CTF challenges and binary exploitation problems.
-
-- [PicoCTF – Pwn – Easy](./writeups/picoctf/pwn/easy/writeeups/)
-- [ROP Emporium – Challenge 1](./writeups/ROP%20Emporium/challenge%201/)
+Writeups and solutions for CTF challenges [here](writeups/README.md)!

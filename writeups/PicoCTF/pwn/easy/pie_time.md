@@ -1,3 +1,11 @@
+---
+title: Format String 0
+parent: easy
+grand_parent: pwn
+great_grand_parent: PicoCTF
+nav_order: 3
+---
+
 # PIE TIME - PicoCTF 2025
 
 **Category:** Binary Exploitation  
