@@ -1,8 +1,31 @@
-title: Alex Cantor
-remote_theme: just-the-docs/just-the-docs
-color_scheme: dark
-markdown: kramdown
+title: Alex Cantor's Knowledge Base and Writeups
+description: CTF writeups and binary exploitation notes
+theme: just-the-docs
 
+color_scheme: dark
+
+# Enable the following plugins for GitHub Pages compatibility
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-remote-theme
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-relative-links
+  - jekyll-default-layout
+  - jekyll-titles-from-headings
+
+# Collections
+collections:
+  writeups:
+    output: true
+    permalink: /:collection/:path/
+  knowledge_base:
+    output: true
+    permalink: /:collection/:path/
+
+# Just the Docs configuration
 just_the_docs:
   collections:
     writeups:
@@ -12,8 +35,9 @@ just_the_docs:
       name: Knowledge Base
       nav_fold: true
 
-defaults:
-  - scope:
-      path: ""
-    values:
-      layout: 
+# Optional: show last modified date
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
+
+# GitHub repo URL (optional)
+repository: yourgithubusername/yourreponame
