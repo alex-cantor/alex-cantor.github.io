@@ -4,6 +4,7 @@ parent: Protection Bypass
 grand_parent: Pwn
 great_grand_parent: Categories
 nav_order: 3
+layout: default
 ---
 
 # GOT Overwrite Attack

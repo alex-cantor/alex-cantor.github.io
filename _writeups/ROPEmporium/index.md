@@ -3,6 +3,7 @@ title: ROPEmporium
 parent: Categories
 nav_order: 2
 has_children: true
+layout: default
 ---
 
 # ROPEmporium

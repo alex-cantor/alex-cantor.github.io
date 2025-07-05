@@ -3,6 +3,7 @@ title: Challenge 1 - ret2win
 parent: ROPEmporium
 grand_parent: Categories
 nav_order: 1
+layout: default
 ---
 
 # Challenge 1: ret2win

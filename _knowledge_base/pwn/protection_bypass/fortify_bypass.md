@@ -4,6 +4,7 @@ parent: Protection Bypass
 grand_parent: Pwn
 great_grand_parent: Categories
 nav_order: 2
+layout: default
 ---
 
 # Bypassing FORTIFY_SOURCE

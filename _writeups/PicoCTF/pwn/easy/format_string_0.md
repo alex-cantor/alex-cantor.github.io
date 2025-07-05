@@ -4,6 +4,7 @@ parent: Easy
 grand_parent: Pwn
 great_grand_parent: PicoCTF
 nav_order: 1
+layout: default
 ---
 
 # format string 0 - PicoCTF 2024
