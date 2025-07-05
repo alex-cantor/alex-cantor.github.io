@@ -29,6 +29,3 @@ just_the_docs:
 
 last_edit_timestamp: true
 last_edit_time_format: "%b %e %Y at %I:%M %p"
-
-# GitHub repo URL (optional)
-repository: yourgithubusername/yourreponame

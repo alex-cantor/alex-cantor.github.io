@@ -1,6 +1,6 @@
 ---
 title: PicoCTF
-parent: Writeups
+parent: Categories
 nav_order: 1
 has_children: true
 ---

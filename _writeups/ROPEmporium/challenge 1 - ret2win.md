@@ -1,7 +1,7 @@
 ---
 title: Challenge 1 - ret2win
 parent: ROPEmporium
-grand_parent: Writeups
+grand_parent: Categories
 nav_order: 1
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Protection Bypass
 parent: Pwn
-grand_parent: Knowledge Base
+grand_parent: Categories
 nav_order: 1
 has_children: true
 ---

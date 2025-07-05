@@ -1,6 +1,6 @@
 ---
 title: ROPEmporium
-parent: Writeups
+parent: Categories
 nav_order: 2
 has_children: true
 ---

@@ -2,7 +2,7 @@
 title: ROP Chains and Shellcode Injection
 parent: Protection Bypass
 grand_parent: Pwn
-great_grand_parent: Knowledge Base
+great_grand_parent: Categories
 nav_order: 6
 ---
 
