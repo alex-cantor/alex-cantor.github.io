@@ -1,9 +1,7 @@
 ---
-title: Writeups
-nav_order: 1
+layout: default
 has_children: true
-nav_exclude: true
-permalink: /writeups-root/
+nav_order: 1
 ---
 
 # Writeups

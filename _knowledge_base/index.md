@@ -1,9 +1,7 @@
 ---
-title: Knowledge Base
-nav_order: 2
+layout: default
 has_children: true
-nav_exclude: true
-permalink: /knowledge_base-root/
+nav_order: 2
 ---
 
 # Knowledge Base
