@@ -21,3 +21,8 @@ The Knowledge Base will be split into folders based on topic. Some folders will 
         - [GOT Overwrite](pwn/protection_bypass/got_overwrite.md)
         - [Infoleak](pwn/protection_bypass/infoleak.md)
         - [ROP Shellcode](pwn/protection_bypass/rop_shellcode.md)
+- [CPTS](CPTS/index.md)
+- [SANS](SANS/index.md)
+    - [SEC504](SANS/SEC504/index.md)
+        - [504.1 - Incident Response and Cyber Investigations](SANS/SEC504/1%20-%20Incident%20Response%20and%20Cyber%20Investigations/index.md)
+        - [504.2 - Recon, Scanning, and Enumeration Attacks](SANS/SEC504/2%20-%20Recon,%20Scanning,%20and%20Enumeration%20Attacks/index.md)
