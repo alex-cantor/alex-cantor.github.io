@@ -67,9 +67,10 @@ Nearly a decade ago, I joined Code Ninjas and earned my Black Belt in programmin
 
 This section contains organized notes and resources on cybersecurity and binary exploitation.
 
-- [Knowledge Base Overview](./knowledge_base/)
-- [Pwn Topics](./knowledge_base/pwn/)
-  - [Protection Bypass](./knowledge_base/pwn/protection_bypass/files/)
+- [Knowledge Base Overview](_knowledge_base/index.md)
+  - [SANS](_knowledge_base/SANS/index.md)
+  - [CPTS](_knowledge_base/CPTS/index.md)
+  - [Pwn Topics](_knowledge_base/pwn/index.md)
 
 ---
 
@@ -77,12 +78,5 @@ This section contains organized notes and resources on cybersecurity and binary 
 
 Writeups and solutions for CTF challenges and binary exploitation problems.
 
-- [PicoCTF – Pwn – Easy](./writeups/picoctf/pwn/easy/writeeups/)
-- [ROP Emporium – Challenge 1](./writeups/ROP%20Emporium/challenge%201/)
-
----
-
-## Contact
-
-If you'd like to get in touch, feel free to reach out by email:  
-[you@example.com](mailto:you@example.com)
+- [PicoCTF – Pwn – Easy](_writeups/PicoCTF/pwn/easy.md)
+- [ROP Emporium – Challenge 1](_writeups/ROPEmporium/challenge%201%20-%20ret2win.md)
