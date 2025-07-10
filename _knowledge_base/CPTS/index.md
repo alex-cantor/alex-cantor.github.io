@@ -29,16 +29,3 @@ I have not yet taken the exam. Once I do, I will update that will more info.
 That being said, based on what I have read, I can answer to the following: the exam takes place over ten days, most of which are utilized by many people. To pass the exam, you must capture at least 10/12 possible flags; additionally, you must complete a final report to a satisfactory degree.
 
 You can learn more [here](https://academy.hackthebox.com/preview/certifications/htb-certified-penetration-testing-specialist/).
-
----
-
-## Table of Contents
-
-These notes will be structured in a duel-manner (partially). While there will certainly be notes about certain modules, in general, the notes will be structured in the same manner that a pentest would be conducted. Thus, these notes are structured as so:
-1. [Pre Engagement]()
-2. [Information Gathering]()
-3. [Vulnerability Assessment]()
-4. [Exploitation]()
-5. [Post Exploitation]()
-6. [Lateral Movement]()
-7. [Post Engagement]()
